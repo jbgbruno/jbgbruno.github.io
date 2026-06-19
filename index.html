@@ -1,278 +1,1178 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+          html {
+            scroll-behavior: smooth;
+          }
+          body {
+            background: #0c0c10;
+            color: #e8e6e1;
+            font-family: "Sora", system-ui, sans-serif;
+          }
+          @keyframes fadeUp {
+            from {
+              opacity: 0;
+              transform: translateY(22px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        </style>
+      </helmet>
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Bruno Gomes | Desenvolvedor WEB</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Bruno Gomes</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experiência</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Educação</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container-fluid p-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-      <div class="my-auto">
-        <h1 class="mb-0">Bruno
-          <span class="text-primary">Gomes</span>
-        </h1>
-        <div class="subheading mb-5">Desenvolvedor WEB · (88) 99901-3632 ·
-          <a href="mailto:jbg.bruno@gmail.com">jbg.bruno@gmail.com</a>
+      <!-- NAV -->
+      <nav
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 100;
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          background: rgba(12, 12, 16, 0.88);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        "
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 14px;
+              color: oklch(0.72 0.15 165);
+              letter-spacing: -0.01em;
+            "
+            >João Bruno</span
+          >
+          <div style="display: flex; gap: 28px">
+            <a
+              href="#sobre"
+              style="
+                font-size: 13px;
+                color: #888698;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              style-hover="color:#e8e6e1"
+              >Sobre</a
+            >
+            <a
+              href="#skills"
+              style="
+                font-size: 13px;
+                color: #888698;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              style-hover="color:#e8e6e1"
+              >Skills</a
+            >
+            <a
+              href="#experiencia"
+              style="
+                font-size: 13px;
+                color: #888698;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              style-hover="color:#e8e6e1"
+              >Experiência</a
+            >
+            <a
+              href="#certificacoes"
+              style="
+                font-size: 13px;
+                color: #888698;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              style-hover="color:#e8e6e1"
+              >Certificações</a
+            >
+            <a
+              href="#contato"
+              style="
+                font-size: 13px;
+                color: #888698;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              style-hover="color:#e8e6e1"
+              >Contato</a
+            >
+          </div>
         </div>
-        <p class="lead mb-5"></p>
-          <div class="social-icons">
-              <a href="https://www.linkedin.com/in/jbgbruno/">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/jbgbruno">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.instagram.com/jbg.bruno/">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://app.crowd.br.com/portfolio-online/Desenvolvedor-WEB/JOAO-BRUNO-GOMES/Full/">
-                <i class="fas fa-copyright"></i>
-              </a>
-            </div>
-      </div>
-    </section>
+      </nav>
 
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-      <div class="my-auto">
-        <h2 class="mb-5">Experiência</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Web Developer</h3>
-            <div class="subheading mb-3">Sistech Sistemas Empresariais</div>
-            <p>Desenvolvimento soluções internas para a empresa, sistemas de automatização de processos, e também
-              algumas soluções para o sistema comercial.</p>
+      <!-- HERO -->
+      <section
+        style="
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 100px 32px 80px;
+          gap: 72px;
+        "
+      >
+        <div style="flex: none; animation: fadeUp 0.6s ease both">
+          <div
+            style="
+              width: 210px;
+              height: 210px;
+              border-radius: 50%;
+              overflow: hidden;
+              border: 2px solid rgba(255, 255, 255, 0.09);
+              box-shadow:
+                0 0 48px oklch(0.72 0.15 165 / 0.18),
+                0 0 0 8px rgba(0, 197, 158, 0.06);
+            "
+          >
+            <img
+              src="./uploads/1696892350514.jpg"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+                display: block;
+              "
+              alt="João Bruno Gomes da Silva"
+            />
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Desde Outubro 2014</span>
+        </div>
+        <div style="flex: 1; animation: fadeUp 0.7s 0.12s ease both">
+          <p
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              color: oklch(0.72 0.15 165);
+              letter-spacing: 0.13em;
+              text-transform: uppercase;
+              margin-bottom: 22px;
+            "
+          >
+            Desenvolvedor Full Stack · 6+ anos
+          </p>
+          <h1
+            style="
+              font-size: clamp(2.2rem, 4.5vw, 3.75rem);
+              font-weight: 800;
+              letter-spacing: -0.03em;
+              line-height: 1.06;
+              margin-bottom: 22px;
+            "
+          >
+            João Bruno<br /><span style="color: #888698; font-weight: 300"
+              >Gomes da Silva</span
+            >
+          </h1>
+          <p
+            style="
+              font-size: 1rem;
+              color: #666578;
+              line-height: 1.85;
+              max-width: 520px;
+              margin-bottom: 36px;
+            "
+          >
+            PHP · Laravel · Python · Django · C# · React.js · RPA · Clean
+            Architecture
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              flex-wrap: wrap;
+              margin-bottom: 36px;
+            "
+          >
+            <a
+              href="mailto:jbg.bruno@gmail.com"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 26px;
+                background: oklch(0.72 0.15 165);
+                color: #0c0c10;
+                font-weight: 700;
+                font-size: 13px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-family: &quot;Sora&quot;, sans-serif;
+                transition: opacity 0.2s;
+              "
+              style-hover="opacity:.82"
+              >Fale comigo</a
+            >
+            <a
+              href="https://github.com/jbgbruno"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 22px;
+                border: 1px solid rgba(255, 255, 255, 0.11);
+                color: #bbb9c4;
+                font-size: 13px;
+                border-radius: 6px;
+                text-decoration: none;
+                transition:
+                  border-color 0.2s,
+                  color 0.2s;
+              "
+              style-hover="border-color:oklch(0.72 0.15 165);color:oklch(0.72 0.15 165)"
+              >GitHub ↗</a
+            >
+            <a
+              href="https://linkedin.com/in/jbgbruno"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 22px;
+                border: 1px solid rgba(255, 255, 255, 0.11);
+                color: #bbb9c4;
+                font-size: 13px;
+                border-radius: 6px;
+                text-decoration: none;
+                transition:
+                  border-color 0.2s,
+                  color 0.2s;
+              "
+              style-hover="border-color:oklch(0.72 0.15 165);color:oklch(0.72 0.15 165)"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="./curriculo.html"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 22px;
+                background: rgba(0, 197, 158, 0.1);
+                border: 1px solid rgba(0, 197, 158, 0.3);
+                color: oklch(0.78 0.12 165);
+                font-size: 13px;
+                border-radius: 6px;
+                text-decoration: none;
+                transition: all 0.2s;
+              "
+              style-hover="background:rgba(0,197,158,0.18);border-color:oklch(0.72 0.15 165)"
+              >↓ Baixar CV</a
+            >
+          </div>
+          <p style="font-size: 12px; color: #3e3d4a; letter-spacing: 0.01em">
+            📍 Barbalha, Ceará, Brasil &nbsp;·&nbsp; (88) 99443-9468
+          </p>
+        </div>
+      </section>
+
+      <!-- STATS STRIP -->
+      <div
+        style="
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          background: #0e0e13;
+        "
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 32px;
+            display: flex;
+          "
+        >
+          <div
+            style="
+              flex: 1;
+              padding: 0 24px;
+              border-right: 1px solid rgba(255, 255, 255, 0.06);
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: -0.04em;
+                line-height: 1;
+              "
+            >
+              6+
+            </p>
+            <p
+              style="
+                font-size: 11px;
+                color: #454353;
+                margin-top: 7px;
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+              "
+            >
+              anos de exp.
+            </p>
+          </div>
+          <div
+            style="
+              flex: 1;
+              padding: 0 24px;
+              border-right: 1px solid rgba(255, 255, 255, 0.06);
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: -0.04em;
+                line-height: 1;
+              "
+            >
+              4
+            </p>
+            <p
+              style="
+                font-size: 11px;
+                color: #454353;
+                margin-top: 7px;
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+              "
+            >
+              empresas
+            </p>
+          </div>
+          <div
+            style="
+              flex: 1;
+              padding: 0 24px;
+              border-right: 1px solid rgba(255, 255, 255, 0.06);
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: -0.04em;
+                line-height: 1;
+              "
+            >
+              39
+            </p>
+            <p
+              style="
+                font-size: 11px;
+                color: #454353;
+                margin-top: 7px;
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+              "
+            >
+              certificações
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0 24px; text-align: center">
+            <p
+              style="
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: -0.04em;
+                line-height: 1;
+              "
+            >
+              20+
+            </p>
+            <p
+              style="
+                font-size: 11px;
+                color: #454353;
+                margin-top: 7px;
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+              "
+            >
+              tecnologias
+            </p>
           </div>
         </div>
       </div>
 
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-      <div class="my-auto">
-        <h2 class="mb-5">Educação</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Centro Universitário Leão Sampaio</h3>
-            <div class="subheading mb-3">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
-
+      <!-- SOBRE -->
+      <section
+        id="sobre"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div style="position: sticky; top: 80px">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              01 / sobre
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+              "
+            >
+              Resumo
+            </h2>
           </div>
-          <div class="resume-date text-md-right">
-            <!-- <span class="text-primary">August 2006 - May 2010</span>-->
-          </div>
+          <p
+            style="
+              font-size: 1.06rem;
+              line-height: 1.9;
+              color: #a8a6b4;
+              padding-top: 44px;
+            "
+          >
+            Desenvolvedor Web com mais de 6 anos de experiência, formado em
+            Análise e Desenvolvimento de Sistemas. Forte atuação em PHP/Laravel,
+            com crescente atuação em Python/Django, C# e React.js. Experiência
+            em sistemas empresariais, arquitetura de software — Clean
+            Architecture, SOLID, Design Patterns —, integrações via APIs
+            RESTful, automação de processos e ETL. Comprometido com boas
+            práticas, qualidade de código e aprendizado contínuo.
+          </p>
         </div>
-      </div>
-    </section>
-    <hr class="m-0">
+      </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="servicos">
-      <div class="my-auto">
-        <h2 class="mb-5">Serviços</h2>
-        <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165d96b93d6%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165d96b93d6%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.953125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"> -->
-                <div class="card-body">
-                  <div class="subheading mb-3">Criação de Sites/Sistemas</div>
-                  <p class="card-text">
-                    
-                  </p>
-                  <!-- <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div> -->
+      <!-- SKILLS -->
+      <section
+        id="skills"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div style="position: sticky; top: 80px">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              02 / skills
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+              "
+            >
+              Competências
+            </h2>
+          </div>
+          <div
+            style="
+              padding-top: 44px;
+              display: flex;
+              flex-direction: column;
+              gap: 36px;
+            "
+          >
+            <sc-for list="{{ skills }}" as="group" hint-placeholder-count="5">
+              <div>
+                <p
+                  style="
+                    font-size: 10px;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    color: #454353;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    margin-bottom: 12px;
+                  "
+                >
+                  {{ group.cat }}
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                  <sc-for
+                    list="{{ group.items }}"
+                    as="skill"
+                    hint-placeholder-count="5"
+                  >
+                    <span
+                      style="
+                        padding: 6px 14px;
+                        font-size: 13px;
+                        line-height: 1;
+                        border-radius: 4px;
+                        border: 1px solid rgba(0, 197, 158, 0.2);
+                        background: rgba(0, 197, 158, 0.07);
+                        color: oklch(0.78 0.12 165);
+                        font-family: &quot;JetBrains Mono&quot;, monospace;
+                      "
+                      >{{ skill }}</span
+                    >
+                  </sc-for>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165d96b93db%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165d96b93db%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.953125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;"> -->
-                <div class="card-body">
-                    <div class="subheading mb-3">Desenvolvimento de Aplicativos</div>
-                  <p class="card-text">
-                    
-                  </p>
-                  <!-- <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-     
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165d96b93e4%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165d96b93e4%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.953125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;"> -->
-                <div class="card-body">
-                    <div class="subheading mb-3">Gestão de Mídias Sociais</div>
-                  <p class="card-text">
-                    
-                  </p>
-                  <!-- <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div> -->
-                </div>
-              </div>
-            </div>
+            </sc-for>
           </div>
-      </div>
+        </div>
+      </section>
 
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-      <div class="my-auto">
-        <h2 class="mb-5">Habilidades</h2>
-
-        <div class="subheading mb-3">Linguagens de Prgramação &amp; Ferramentas</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-php"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-git"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-github"></i>
-          </li>
-        </ul>         
-
-      </div>
-    </section>
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="contato">
-      <div class="my-auto">
-        <h2 class="mb-5">Contato</h2>
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="col-md-8 mx-auto">
-              <div class="social-icons">
-                <a href="https://www.linkedin.com/in/jbgbruno/">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/jbgbruno">
-                  <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.instagram.com/jbg.bruno/">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </div>
+      <!-- EXPERIÊNCIA -->
+      <section
+        id="experiencia"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div style="position: sticky; top: 80px">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              03 / carreira
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+              "
+            >
+              Experiência
+            </h2>
+          </div>
+          <div style="padding-top: 44px; position: relative">
+            <div
+              style="
+                position: absolute;
+                left: 0;
+                top: 16px;
+                bottom: 16px;
+                width: 1px;
+                background: rgba(255, 255, 255, 0.07);
+              "
+            ></div>
+            <div style="display: flex; flex-direction: column; gap: 48px">
+              <sc-for
+                list="{{ experiences }}"
+                as="exp"
+                hint-placeholder-count="4"
+              >
+                <div style="padding-left: 28px; position: relative">
+                  <div
+                    style="
+                      position: absolute;
+                      left: -4px;
+                      top: 7px;
+                      width: 9px;
+                      height: 9px;
+                      border-radius: 50%;
+                      background: oklch(0.72 0.15 165);
+                      box-shadow: 0 0 16px oklch(0.72 0.15 165 / 0.65);
+                    "
+                  ></div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: baseline;
+                      gap: 14px;
+                      margin-bottom: 6px;
+                      flex-wrap: wrap;
+                    "
+                  >
+                    <h3
+                      style="
+                        font-size: 1.05rem;
+                        font-weight: 600;
+                        letter-spacing: -0.01em;
+                      "
+                    >
+                      {{ exp.role }}
+                    </h3>
+                    <span
+                      style="
+                        font-size: 12px;
+                        color: oklch(0.72 0.15 165);
+                        font-family: &quot;JetBrains Mono&quot;, monospace;
+                      "
+                      >{{ exp.company }}</span
+                    >
+                  </div>
+                  <p
+                    style="
+                      font-size: 11px;
+                      color: #3e3d4a;
+                      font-family: &quot;JetBrains Mono&quot;, monospace;
+                      margin-bottom: 12px;
+                      letter-spacing: 0.03em;
+                    "
+                  >
+                    {{ exp.period }}
+                  </p>
+                  <p style="font-size: 14px; color: #888698; line-height: 1.8">
+                    {{ exp.desc }}
+                  </p>
+                </div>
+              </sc-for>
             </div>
           </div>
         </div>
-    </section>
+      </section>
 
+      <!-- FORMAÇÃO -->
+      <section
+        id="formacao"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div style="position: sticky; top: 80px">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              04 / formação
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+              "
+            >
+              Acadêmica
+            </h2>
+          </div>
+          <div style="padding-top: 44px">
+            <div
+              style="
+                padding: 28px 32px;
+                border: 1px solid rgba(255, 255, 255, 0.07);
+                border-radius: 8px;
+                background: #111117;
+              "
+            >
+              <p
+                style="
+                  font-size: 11px;
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  color: oklch(0.72 0.15 165);
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  margin-bottom: 12px;
+                "
+              >
+                Concluído em 2012
+              </p>
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 600;
+                  margin-bottom: 8px;
+                  letter-spacing: -0.01em;
+                "
+              >
+                Tecnologia em Análise e Desenvolvimento de Sistemas
+              </h3>
+              <p style="font-size: 14px; color: #888698">
+                Faculdade de Ciências Aplicadas Leão Sampaio
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  </div>
+      <!-- CERTIFICAÇÕES -->
+      <section
+        id="certificacoes"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div style="position: sticky; top: 80px">
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              05 / cursos
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+              "
+            >
+              Certificações
+            </h2>
+          </div>
+          <div style="padding-top: 44px">
+            <sc-for
+              list="{{ visibleCerts }}"
+              as="cert"
+              hint-placeholder-count="8"
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  justify-content: space-between;
+                  gap: 24px;
+                  padding: 15px 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                "
+              >
+                <div style="flex: 1">
+                  <p style="font-size: 14px; color: #e8e6e1; line-height: 1.55">
+                    {{ cert.name }}
+                  </p>
+                  <p style="font-size: 12px; color: #555465; margin-top: 4px">
+                    {{ cert.provider }}
+                  </p>
+                </div>
+                <p
+                  style="
+                    font-size: 11px;
+                    color: #3e3d4a;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    flex: none;
+                    padding-top: 3px;
+                    white-space: nowrap;
+                  "
+                >
+                  {{ cert.date }}
+                </p>
+              </div>
+            </sc-for>
+            <button
+              onClick="{{ toggleCerts }}"
+              style="
+                margin-top: 24px;
+                padding: 10px 22px;
+                border: 1px solid rgba(255, 255, 255, 0.09);
+                background: transparent;
+                color: #888698;
+                font-size: 13px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: &quot;Sora&quot;, sans-serif;
+                letter-spacing: 0.01em;
+                transition: all 0.2s;
+              "
+              style-hover="border-color:oklch(0.72 0.15 165);color:oklch(0.72 0.15 165)"
+            >
+              {{ toggleLabel }}
+            </button>
+          </div>
+        </div>
+      </section>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- CONTATO -->
+      <footer
+        id="contato"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.05)"
+      >
+        <div
+          style="
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 32px 80px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div>
+            <p
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                color: oklch(0.72 0.15 165);
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              06 / contato
+            </p>
+            <h2
+              style="
+                font-size: 1.75rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.2;
+                margin-bottom: 16px;
+              "
+            >
+              Contato
+            </h2>
+            <p style="font-size: 14px; color: #555465; line-height: 1.75">
+              Aberto a novas oportunidades e projetos interessantes.
+            </p>
+          </div>
+          <div
+            style="
+              padding-top: 44px;
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+            "
+          >
+            <a
+              href="mailto:jbg.bruno@gmail.com"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: #e8e6e1;
+                text-decoration: none;
+                font-size: 15px;
+                transition: color 0.2s;
+              "
+              style-hover="color:oklch(0.72 0.15 165)"
+            >
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 10px;
+                  color: #3e3d4a;
+                  min-width: 60px;
+                  letter-spacing: 0.07em;
+                  text-transform: uppercase;
+                "
+                >email</span
+              >
+              jbg.bruno@gmail.com
+            </a>
+            <a
+              href="tel:+5588994439468"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: #e8e6e1;
+                text-decoration: none;
+                font-size: 15px;
+                transition: color 0.2s;
+              "
+              style-hover="color:oklch(0.72 0.15 165)"
+            >
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 10px;
+                  color: #3e3d4a;
+                  min-width: 60px;
+                  letter-spacing: 0.07em;
+                  text-transform: uppercase;
+                "
+                >tel</span
+              >
+              (88) 99443-9468
+            </a>
+            <a
+              href="https://linkedin.com/in/jbgbruno"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: #e8e6e1;
+                text-decoration: none;
+                font-size: 15px;
+                transition: color 0.2s;
+              "
+              style-hover="color:oklch(0.72 0.15 165)"
+            >
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 10px;
+                  color: #3e3d4a;
+                  min-width: 60px;
+                  letter-spacing: 0.07em;
+                  text-transform: uppercase;
+                "
+                >linkedin</span
+              >
+              linkedin.com/in/jbgbruno
+            </a>
+            <a
+              href="https://github.com/jbgbruno"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: #e8e6e1;
+                text-decoration: none;
+                font-size: 15px;
+                transition: color 0.2s;
+              "
+              style-hover="color:oklch(0.72 0.15 165)"
+            >
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 10px;
+                  color: #3e3d4a;
+                  min-width: 60px;
+                  letter-spacing: 0.07em;
+                  text-transform: uppercase;
+                "
+                >github</span
+              >
+              github.com/jbgbruno
+            </a>
+          </div>
+        </div>
+      </footer>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <div
+        style="
+          border-top: 1px solid rgba(255, 255, 255, 0.04);
+          padding: 20px 32px;
+          text-align: center;
+        "
+      >
+        <p
+          style="
+            font-size: 11px;
+            color: #222130;
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            letter-spacing: 0.05em;
+          "
+        >
+          João Bruno Gomes da Silva · 2026
+        </p>
+      </div>
+    </x-dc>
+    <script type="text/x-dc" data-dc-script>
+      class Component extends DCLogic {
+        state = { certExpanded: false };
 
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+        renderVals() {
+          const skills = [
+            { cat: 'Back-end', items: ['PHP', 'Laravel', 'Python', 'Django', 'C#', 'ASP.NET'] },
+            { cat: 'Front-end', items: ['JavaScript', 'React.js', 'Vue.js', 'React Native', 'HTML5', 'CSS3', 'Bootstrap', 'Livewire', 'jQuery'] },
+            { cat: 'Dados & DevOps', items: ['SQL', 'Docker', 'Pentaho ETL', 'Git', 'GitHub'] },
+            { cat: 'Boas Práticas', items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Clean Code', 'RESTful APIs'] },
+            { cat: 'IA & Automação', items: ['LangChain', 'RPA'] },
+          ];
 
-</body>
+          const experiences = [
+            {
+              role: 'Analista de Sistemas',
+              company: 'GubolinCo Brasil',
+              period: 'out/2021 – Presente · 4+ anos',
+              desc: 'Desenvolvimento e manutenção de sistemas em PHP, Python, C# e React.js. Automação de processos com RPA e integração de dados com Pentaho ETL.',
+            },
+            {
+              role: 'Desenvolvedor Web PHP',
+              company: 'Universidade Patativa do Assaré',
+              period: 'set/2020 – set/2021 · 1 ano',
+              desc: 'Desenvolvimento de soluções web utilizando PHP com o framework Laravel.',
+            },
+            {
+              role: 'Desenvolvedor de Aplicativos Móveis',
+              company: 'Seu App Aqui',
+              period: 'fev/2020 – abr/2020 · 3 meses',
+              desc: 'Desenvolvimento de aplicativos móveis.',
+            },
+            {
+              role: 'Desenvolvedor de Software',
+              company: 'Sistech Sistemas Empresariais',
+              period: 'out/2014 – fev/2020 · 5 anos',
+              desc: 'Desenvolvimento de soluções web em PHP/Laravel e manutenção de sistemas em Delphi.',
+            },
+          ];
 
+          const allCerts = [
+            { name: 'IA Master: Aplicações de Inteligência Artificial com Python (20h)', provider: 'PycodeBR', date: 'mai/2026' },
+            { name: 'Django Master: Aplicações Web com Python e Django (45h)', provider: 'PycodeBR', date: 'mai/2026' },
+            { name: 'Django Master: APIs Modernas com Python e Django (18h)', provider: 'PycodeBR', date: 'mai/2026' },
+            { name: 'Django Master: Arquitetura e Modelagem de Sistemas Modernos (21h)', provider: 'PycodeBR', date: 'mai/2026' },
+            { name: 'Desenvolvimento orientado a domínio (DDD) e CI/CD', provider: 'OOP Mentor', date: 'set/2025' },
+            { name: 'Avançando com OOP — práticas e otimizações', provider: 'OOP Mentor', date: 'set/2025' },
+            { name: 'Clean architecture e arquiteturas de software', provider: 'OOP Mentor', date: 'ago/2025' },
+            { name: 'Microsserviços e estratégias de integração', provider: 'OOP Mentor', date: 'ago/2025' },
+            { name: 'Aplicação prática de design patterns', provider: 'OOP Mentor', date: 'jul/2025' },
+            { name: 'Solidificar design patterns e princípios SOLID em projetos complexos', provider: 'OOP Mentor', date: 'jul/2025' },
+            { name: 'Introdução aos design patterns', provider: 'OOP Mentor', date: 'jun/2025' },
+            { name: 'Princípios SOLID', provider: 'OOP Mentor', date: 'jun/2025' },
+            { name: 'Testes e qualidade do código', provider: 'OOP Mentor', date: 'mai/2025' },
+            { name: 'Refatoração e padrões de código limpo', provider: 'OOP Mentor', date: 'mai/2025' },
+            { name: 'Introdução ao clean code', provider: 'OOP Mentor', date: 'abr/2025' },
+            { name: 'Padrões de código e ferramentas', provider: 'OOP Mentor', date: 'abr/2025' },
+            { name: 'Aplicando orientação a objetos a problemas complexos', provider: 'OOP Mentor', date: 'mar/2025' },
+            { name: 'Orientação a objetos e padrões de design avançados', provider: 'OOP Mentor', date: 'mar/2025' },
+            { name: 'Conceitos básicos de orientação a objetos', provider: 'OOP Mentor', date: 'fev/2025' },
+            { name: 'Princípios fundamentais de orientação a objetos', provider: 'OOP Mentor', date: 'fev/2025' },
+            { name: 'Docker: criando e gerenciando containers', provider: 'Alura', date: 'mar/2024' },
+            { name: 'Pentaho Data Integration — ETL Essencial', provider: 'Udemy', date: 'abr/2023' },
+            { name: 'Fundamentos do ASP.NET 6', provider: 'balta.io', date: 'mar/2023' },
+            { name: 'IBM Robotic Process Automation Introduction', provider: 'IBM', date: 'jan/2023' },
+            { name: 'Fundamentos da Orientação a Objetos', provider: 'balta.io', date: 'jan/2023' },
+            { name: 'Fundamentos do C#', provider: 'balta.io', date: 'jan/2023' },
+            { name: 'C#: orientação a objetos', provider: 'Alura', date: 'jul/2022' },
+            { name: 'Laravel Mastery', provider: 'Code Experts', date: 'jun/2021' },
+            { name: 'Produtividade na Programação', provider: 'B7Web', date: 'jun/2019' },
+            { name: 'JavaScript', provider: 'B7Web', date: 'mai/2019' },
+            { name: 'HTML5 e CSS3', provider: 'B7Web', date: 'mai/2019' },
+            { name: 'React Native Básico', provider: 'B7Web', date: 'abr/2019' },
+            { name: 'Desenvolvimento de layouts com Bootstrap', provider: 'School of Net', date: 'jan/2017' },
+            { name: 'Desenvolvimento de temas para WordPress', provider: 'School of Net', date: 'jan/2017' },
+            { name: 'Vue.js 1', provider: 'School of Net', date: 'out/2016' },
+            { name: 'Iniciando com Laravel', provider: 'School of Net', date: 'ago/2016' },
+            { name: 'PHP — Avançando com OO', provider: 'School of Net', date: 'jun/2016' },
+            { name: 'PHP Básico', provider: 'School of Net', date: 'jun/2016' },
+            { name: 'HTML5', provider: 'School of Net', date: 'jun/2016' },
+          ];
+
+          const { certExpanded } = this.state;
+          const visibleCerts = certExpanded ? allCerts : allCerts.slice(0, 8);
+          const toggleLabel = certExpanded
+            ? 'Mostrar menos'
+            : 'Ver todas as ' + allCerts.length + ' certificações ↓';
+
+          return {
+            skills,
+            experiences,
+            visibleCerts,
+            toggleLabel,
+            toggleCerts: () => this.setState(s => ({ certExpanded: !s.certExpanded })),
+          };
+        }
+      }
+    </script>
+  </body>
 </html>
